@@ -1,0 +1,148 @@
+// ----------------------------------------------------
+// 🎓 Documenteo - Thème Violet & Clash Display partout
+// Layout : 3 colonnes + whitesmoke en couleur de texte
+// ----------------------------------------------------
+
+// PALETTE VIOLET
+$russian-violet: #10002b;
+$persian-indigo: #3c096c;
+$tekhelet: #5a189a;
+$french-violet: #7b2cbf;
+$amethyst: #9d4edd;
+$heliotrope: #c77dff;
+$mauve: #e0aaff;
+
+$primary: $tekhelet;
+$secondary: $french-violet;
+$bg: $russian-violet;
+$text: whitesmoke;
+$accent: $heliotrope;
+$light: $mauve;
+
+// TYPOGRAPHIE
+body {
+  font-family: 'Clash Display', sans-serif;
+  background: $bg;
+  color: $text;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  color: $accent;
+}
+
+a {
+  font-family: 'Clash Display', sans-serif;  
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+// HEADER
+header {
+  font-family: 'Clash Display', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(to right, $primary, $amethyst);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $light;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 0;
+      margin: 0;
+
+      li a {
+        font-weight: 500;
+        position: relative;
+        color: $text;
+
+        &.active::after,
+        &:hover::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          width: 100%;
+          background: $accent;
+        }
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+// LAYOUT 3 COLONNES
+.layout {
+  font-family: 'Clash Display', sans-serif;  
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  min-height: 80vh;
+
+  .sidebar-left,
+  .sidebar-right {
+    background: $persian-indigo;
+    color: $text;
+    padding: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .main-content {
+    background: $bg;
+    color: $text;
+    padding: 3rem 2rem;
+    animation: fadeIn 0.5s ease;
+  }
+}
+
+// FOOTER
+footer {
+  font-family: 'Clash Display', sans-serif;
+  background: $secondary;
+  color: $text;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+// ANIMATION
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
